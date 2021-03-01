@@ -1,3 +1,7 @@
+:images: https://raw.githubusercontent.com/spring-guides/tut-metrics-and-tracing/master/images
+:toc:
+:project_id: gs-tut-metrics-and-tracing
+
 = Metrics and Tracing with Spring
 
 Spring offers the pieces you need to add metrics and tracing to your Spring applications.
@@ -152,21 +156,21 @@ It has a limited lifespan, so it cannot support a production application, but it
 
 The following image shows the starting page of the Wavefront dashboard for our application:
 
-image::images/1.png[]
+image::{images}/1.png[]
 
 Wavefront comes fully loaded with a Spring Boot dashboard in the Dashboards menu at the top of the screen.
 The top of the dashboard shows that the source is `my-cloud-server`, which comes from the `management.export.wavefront.source` configuration property (or you can use the default, which is the hostname of the machine).
 The application we care about is `console-availability`, which comes from the `wavefront.application.name` configuration property.
 "`Application`" refers to the logical group of Spring Boot microservices rather than any specific application.
 
-image::images/2.png[]
+image::{images}/2.png[]
 
 Click on `console-availability` to see everything about your application at a glance.
 You can look at information for either module: client or service.
 Click *Jump To* to navigate to a particular set of graphs.
 We want the data in the HTTP section.
 
-image::images/3.png[]
+image::{images}/3.png[]
 
 You can see useful information, such as the Top Requests, the Top Failed Requests, and the Top Exceptions encountered in the code.
 Mouse over a particular type of request to get some details associated with each entry.
@@ -194,28 +198,28 @@ However, there is always the trace data.
 Click on the little breadcrumb/sandwich icon to the right of "`Top Failed Requests`".
 Then find the service by going to Traces > console-availability.
 
-image::images/4.png[]
+image::{images}/4.png[]
 
 The following screenshot shows all the traces collected for the application (good, bad, or otherwise):
 
-image::images/5.png[]
+image::{images}/5.png[]
 
 Now we can drill down into only the errant requests by adding an *Error* filter to the search.
 Then we can click *Search*.
 Now we can scrutinize individual errant requests.
 You can see how much time was taken in each service call, the relationship between services, and where the error originated.
 
-image::image6.png[]
+image::{images}/6.png[]
 
 Click on the expand icon for the panel labeled "`client: GET`" in the bottom right.
 You can see each hop in the request’s journey, how long it took, the trace ID, the URL, and the path.
 
-image::image7.png[]
+image::{images}/7.png[]
 
 Expand the Tags branch under a particular segment of the trace, and you can see the metadata that Spring Cloud Sleuth automatically collected for you.
 A trace is made up of individual segments, called spans, that describe one hop in the request’s journey.
 
-image::image8.png[]
+image::{images}/8.png[]
 
 == Enhancing the Data with Business (Domain) Context
 
