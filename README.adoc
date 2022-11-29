@@ -237,7 +237,12 @@ Now, instead of determining the type of console from the HTTP path in the trace 
 To make this change, we update the service to inject a `SpanCustomizer`, to customize the trace information.
 We also update the service to configure a `WebFluxTagsContributor`, to customize the tags that are captured by Spring Boot and given to Micrometer. The following listing shows the modified application:
 
+====
+[src,java]
+----
 include::enhanced/src/main/java/server/ServiceApplication.java[]
+----
+====
 
 == Metrics and Tracing Usage
 
