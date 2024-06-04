@@ -4,6 +4,8 @@
 :source-highlighter: prettify
 :project_id: gs-tut-metrics-and-tracing
 
+# This repository is no longer maintained.
+
 = Metrics and Tracing with Spring
 
 Spring offers the pieces you need to add metrics and tracing to your Spring applications.
